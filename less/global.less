@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+*, *::before, *::after {box-sizing: border-box;}
 
 html {
   font-size: 62.5%;
@@ -28,10 +26,16 @@ h4 {
   padding-bottom: 10px;
 }
 
-p {
+p, a {
   line-height: 1.5;
   font-size: 1.6rem;
   padding-bottom: 10px;
+}
+
+a {
+  padding-bottom: 0px;
+  text-decoration: none;
+  color: black;
 }
 
 img {
@@ -39,8 +43,23 @@ img {
   height: auto;
 }
 
-.container {
+#page{
+  .flexy();
+  flex-direction: column;
+  .res(90%,100%);
+  .resMax(800px);
+  @media screen and (max-width: 1000px) {
+    .res(90%,100%);
+  }
+}
+
+#pageContainer{
+  .flexy(center center);
+  flex-direction: column;
+}
+/*.container {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-}
+  border: solid green;}*/
+

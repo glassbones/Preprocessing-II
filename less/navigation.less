@@ -1,1 +1,32 @@
 // Navigation Styles here
+
+
+#navBar{
+    .flexy();
+    height: 90px;
+    .liner();
+
+    #navContainer{
+        .flexy(space-between);
+        .res(90%,100%);
+        .resMax(800px);
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            h1 {
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+        }
+
+        nav {
+            .flexy(space-evenly);
+            .res(43%);
+            .resMax(344px);
+            @media screen and (max-width: 768px){
+                width: 100%;
+                .flexy(space-between)
+            }
+        }
+    }
+}
