@@ -8,6 +8,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Roboto" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
+  <script defer src="script.js"></script>
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -68,17 +69,48 @@
         <div class="destination">
           <h4>Fun In The Sun</h4>
           <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-          <div class="btn">Sign Me Up!</div>
+          <button data-modal-target="#modal" class="btn">Sign Me Up!</button>
         </div>
         <div class="destination">
           <h4>Mountain Excursion</h4>
           <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-          <div class="btn">Sign Me Up!</div>
+          <button data-modal-target="#modal" class="btn">Sign Me Up!</button>
         </div>
         <div class="destination">
           <h4>Island Getaway</h4>
           <p>Expedition excursion design excursion fun, clean simple organized WordPress Travel colorful webdesign. Traveler blogger website design expedition clean excursion traveling.</p>
-          <div class="btn">Sign Me Up!</div>
+          <button data-modal-target="#modal" class="btn">Sign Me Up!</button>
+          <div class="modal" id="modal">
+            <div class="modal-header">
+              <button data-close-button="" class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div id="forms">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Name" id="fname" name="fname"><br>
+                  <input type="text" placeholder="Email" id="lname" name="lname"><br>
+                  <input type="text" placeholder="Phone Number" id="lname" name="lname"><br>
+                  <select id="country"  name="country">
+                    <option value="" disabled selected>Area</option>
+                    <option value="AM">America</option>
+                    <option value="ME">'Merica</option>
+                    <option value="usa">USA</option>
+                  </select><br>
+                  <select id="package"  name="Package">
+                    <option value="" disabled selected>Package</option>
+                    <option value="AM">This</option>
+                    <option value="ME">Doesn't</option>
+                    <option value="usa">Work :)</option>
+                  </select><br>                 
+                  <button class="close-button">SUBMIT</button>
+                </form>
+              </div>
+              
+              
+              </form>
+            </div>
+          </div>
+          <div id="overlay"></div>
         </div>
       </section>
     </div><!-- page -->

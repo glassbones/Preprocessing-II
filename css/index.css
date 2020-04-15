@@ -1,3 +1,10 @@
+/*
+.signUpHover(){
+    @hover ~ "&:hover{";
+    @bracket ~ "}";
+        @hover color: rgba(0, 0, 0, 0); border: solid #008080; @bracket ;
+}
+*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -257,6 +264,128 @@ header {
 header img {
   padding-bottom: 10px;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+.modal {
+  flex-direction: column-reverse;
+  position: fixed;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 30%) scale(0);
+  transition: 200ms ease-in-out;
+  padding: 1%;
+  width: 80%;
+  height: 60%;
+  max-width: 378px;
+  max-height: 512px;
+  z-index: 10;
+}
+.modal .modal-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+}
+.modal .modal-body {
+  min-height: 396px;
+  height: 93%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-body #forms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.modal .modal-body #forms form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+.modal .modal-body #forms form input[type=text],
+.modal .modal-body #forms form select {
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  width: 75%;
+  z-index: 10;
+}
+.modal .modal-body #forms form #country {
+  color: #5a5a5a;
+  cursor: pointer;
+}
+.modal .modal-body #forms form #package {
+  border: 1px solid #57b657;
+  background-color: #eaffea;
+  cursor: pointer;
+}
+.modal .modal-body #forms form p {
+  line-height: 1rem;
+  margin-bottom: 0;
+}
+.modal .modal-body #forms form button {
+  width: 25%;
+  height: 15.72px;
+  margin-top: 15px;
+  background-color: #57b657;
+  color: white;
+  border: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 1.5px;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+.modal .modal-body #forms form button:hover {
+  background: #62f562 1px;
+  box-shadow: 0px 1px 10px rgba(217, 255, 181, 0.3);
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+}
+.close-button {
+  margin: auto;
+  transform: scale(3);
+  border-radius: 50%;
+  background: rgba(182, 87, 87, 0);
+  color: rgba(182, 87, 87, 0);
+  border: rgba(182, 87, 87, 0);
+  transition: 200ms;
+  /*&:hover{
+        background: rgb(182, 87, 87) 1px;
+        border: solid white 1px;
+    }*/
+}
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9;
+  pointer-events: none;
+  transition: 200ms ease-in-out;
+}
+#overlay.active {
+  pointer-events: all;
+  opacity: 1;
+}
+.modal.active {
+  transform: translate(-50%, 30%) scale(1);
+}
 @media screen and (max-width: 768px) {
   #funTitle {
     font-size: 3.2rem;
@@ -365,10 +494,17 @@ header img {
   margin: 0% 20% 0% 0%;
   border-radius: 10px;
   font-size: 2rem;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
   .home .content-pick .destination .btn {
     width: 100%;
     height: auto;
   }
+}
+.home .content-pick .destination .btn:hover {
+  background-color: #015757;
 }
