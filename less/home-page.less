@@ -1,18 +1,22 @@
-.home {
 
+#funTitle{ @media screen and (max-width: 768px) {font-size: 3.2rem;}}
+
+.home {
+  
   .content-section {
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-   
-    
+    @media screen and (max-width: 768px){
+      flex-direction:column;
+    }
+  
     .text-content {
       width: 48%;
       padding-right: 1%;
     }
-
+    
     .img-content {
       width: 48%;
       padding-left: 1%;
@@ -21,26 +25,44 @@
         border-radius: 10px;
       }
     }
+    .imgTxt{
+      @media screen and (max-width: 768px){
+        .res(100%);
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
   }
 
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+    @media screen and (max-width: 768px){
+      flex-direction:column-reverse;
+      .liner()
+    }
 
     .text-content {
       padding-left: 1%;
       padding-right: 0;
+      @media screen and (max-width: 768px){
+        padding-left: 0;
+      }
     }
 
     .img-content {
       padding-right: 1%;
       padding-left: 0;
+      @media screen and (max-width: 768px){
+        padding-left: 0;
+      }
     }
   }
 
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    @media screen and (max-width: 768px){.res(100%);}
 
     img {
       border-radius: 10px;
@@ -52,10 +74,37 @@
     border-top: 2px dashed @navigation-border;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      align-items: center;
+    }
 
     .destination {
       width: 30%;
       margin-bottom: 30px;
+      @media screen and (max-width: 768px){
+        width: 80%;
+        justify-self: center;
+      }
+      .btn{
+        .flexy();
+        background-color: #008080;
+        color: white;
+        padding: .75rem;
+        margin: 0% 20% 0% 0%;
+        border-radius: 10px;
+        font-size: 2rem;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+        @media screen and (max-width: 768px){
+        .res(100%);
+        }
+        &:hover{
+          background-color: #015757;
+        }
+      }
     }
   }
 }// home
